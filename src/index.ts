@@ -5,12 +5,13 @@ dotenv.config();
 
 const url: string = process.env.URL || "";
 
-const nameResults: string[] = [];
-const valueResults: string[] = [];
+const nameResults: string[] = []; //The array stored coin names
+const valueResults: string[] = []; //The array stored coin values
 
 /**
- *
- * @param page
+ *Sort the results in descending order
+ * @param page The web page to be opened
+ * @param times The times click the sort button
  */
 const sortByDeFiValue = async (page: puppeteer.Page, times: number) => {
   try {
@@ -22,9 +23,15 @@ const sortByDeFiValue = async (page: puppeteer.Page, times: number) => {
         await (sortButton[0] as ElementHandle<HTMLElement>).click();
       }
     }
-  } catch (e) {}
+  } catch (e) {
+    console.log(e);
+  }
 };
 
+/**
+ * Get the names of coins
+ * @param page The web page to be opened
+ */
 const getDeFiNames = async (page: puppeteer.Page) => {
   const names = await page.$x(
     `//div[@id="tabContainer"]/div[2]/div[2]/div/div[2]/div/div/a/div[2]`
@@ -37,6 +44,10 @@ const getDeFiNames = async (page: puppeteer.Page) => {
   }
 };
 
+/**
+ * Get the values of coins
+ * @param page The web page to be opened
+ */
 const getDeFiValues = async (page: puppeteer.Page) => {
   const values = await page.$x(
     `//div[@id="tabContainer"]/div[2]/div[2]/div/div[2]/div/div/div[1]/div`
@@ -51,6 +62,12 @@ const getDeFiValues = async (page: puppeteer.Page) => {
   }
 };
 
+/**
+ * Demonstrate the selected results
+ * @param nameArray The array stored coin names
+ * @param valueArray The array stored coin values
+ * @param itemsNumber The number of items to be demonstrated
+ */
 const demoValues = (
   nameArray: string[],
   valueArray: string[],
