@@ -36,7 +36,7 @@ If the CLI script were to be run today and given the following results seen on B
 ```bash
 $ npm i
 ```
-<i><b>It will take a while to install all the dependencies needed to run the program</i>:hourglass:, <i>thanks for your patience</b></i>:heart:
+<i><b>It will take a while to install all the dependencies needed to run the program</i>:hourglass:. <i>Thanks for your patience!</b></i>
 
 ### 4. Setup Environment Variables
 Create a file named <i><b>.env</b></i> at the root directory, and copy the following code in it:
@@ -81,4 +81,5 @@ TOP 5 DEFI PRICES
  - https://www.w3schools.com/xml/xpath_syntax.asp
  - https://pptr.dev/
 
-<i><b>Thank you for any advice and suggestions!</b></i> :heart:
+<i><b>Thank you for any advice and suggestions! :thumbsup:
+</b></i> 
