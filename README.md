@@ -71,10 +71,17 @@ TOP 5 DEFI PRICES
 ```
 :dart:That would be the result after you execute the script.
 
+### 8. Run Test
+
+```bash
+$ npm test
+```
+
 ## Main Tech Stack and Libraries in the Project
-<b>• Programming Language: </b> [TypeScript](https://www.typescriptlang.org/)<br>
-<b>• Node Selection:</b> [Xpath](https://www.w3schools.com/xml/xpath_syntax.asp)<br>
- <b>• Web Crawling Library</b> [Puppeteer](https://pptr.dev/)
+<b>• Programming Language:  </b> [TypeScript](https://www.typescriptlang.org/)<br>
+<b>• Node Selection:  </b> [Xpath](https://www.w3schools.com/xml/xpath_syntax.asp)<br>
+ <b>• Web Crawling Library: </b> [Puppeteer](https://pptr.dev/)<br>
+  <b>• Testing Framework: </b>[Jest](https://jestjs.io/)
 </table>
 
 ## References
@@ -82,6 +89,7 @@ TOP 5 DEFI PRICES
  - https://www.tutorialspoint.com/puppeteer/puppeteer_getting_element_text.htm
  - https://www.w3schools.com/xml/xpath_syntax.asp
  - https://pptr.dev/
+ - https://jestjs.io/docs/next/puppeteer
 
 <i><b>Thank you for any advice and suggestions! :thumbsup:
 </b></i> 
