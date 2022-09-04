@@ -3,7 +3,7 @@ import puppeteer, { ElementHandle } from "puppeteer";
 
 dotenv.config();
 
-const url: string = process.env.URL || "";
+const url: string = process.env.URL || ""; //The URL of the webpage to do web scrapping
 
 const nameResults: string[] = []; //The array stored coin names
 const valueResults: string[] = []; //The array stored coin values
@@ -88,7 +88,7 @@ const demoValues = (
 
 const main_actual = async () => {
   try {
-    console.log("Your program is running on ", url);
+    console.log("Your program is running to scrap the webpage:", url);
     const browser: puppeteer.Browser = await puppeteer.launch({
       headless: false,
     });
