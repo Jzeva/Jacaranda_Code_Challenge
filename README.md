@@ -14,43 +14,45 @@ If the CLI script were to be run today and given the following results seen on B
 
 1. YFI  - $13453.44
 2. YFII - $ 1447.07
-
 3. MKR  - $ 1105.44
-
 4. BIFI - $  569.48
-
 5. AUTO - $  417.48
 
 -------------------
 ```
-## To run this program:mag:, you need to...
+## To run this program:mag:, you need...
 
-### 1. Recommended Code Editor
+### 1. Terminal
+- <b>MacOS:</b> This code challenge is finished by MacBook, so it can run smoothly in <b><i>zsh</i></b> terminal under macOS.<br><br>
+- <b>Windows:</b> If you are using Windows and have trouble in running this program in Windows <b><i>Powershell</i></b>. Try this: [Setting up Windows Terminal](https://theflying.dev/digital-garden/setting-up-windows-terminal/)<br><br>
+- <b>Linux</b> This program can be executed under <b><i>bash</i></b> terminal.
+
+### 2. Recommended Code Editor
 [Visual Studio Code](https://www.figma.com/file/EMfRYJpL3DN3Dalde3iAYh/basketball-canva-hifi?node-id=1%3A2392)
 
-### 2. Download the Source Code
+### 3. Download the Source Code
 [From my GitHub Repo](https://github.com/Jzeva/Jacaranda_Code_Challenge)
 
-### 3. Install Dependencies
+### 4. Install Dependencies
 
 ```bash
 $ npm i
 ```
 <i><b>It will take a while to install all the dependencies needed to run the program</i>:hourglass:. <i>Thanks for your patience!</b></i>
 
-### 4. Setup Environment Variables
+### 5. Setup Environment Variables
 Create a file named <i><b>.env</b></i> at the root directory, and copy the following code in it:
 ```bash
 URL="https://www.binance.com/en-AU/markets/coinInfo-defi"
 ```
 Then save it.
 
-### 5.Run the CLI script
+### 6. Run the CLI script
 
 ```bash
 $ ./start.sh
 ```
-### Check the result
+### 7. Check the result
 
 If everything is going right, you will find the target web page has been opened in the Chromium.
 
