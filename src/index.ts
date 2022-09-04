@@ -5,8 +5,19 @@ dotenv.config();
 
 const url: string = process.env.URL || ""; //The URL of the webpage to do web scrapping
 
-const nameResults: string[] = []; //The array stored coin names
-const valueResults: string[] = []; //The array stored coin values
+const gotoPage = async (targetUrl: string) => {
+  const browser: puppeteer.Browser = await puppeteer.launch({
+    headless: false,
+  });
+  const page: puppeteer.Page = await browser.newPage();
+  await page.setViewport({
+    width: 1280,
+    height: 800,
+    deviceScaleFactor: 1,
+  });
+  await page.goto(targetUrl, { waitUntil: "networkidle2" });
+  return page;
+};
 
 /**
  *Sort the results in descending order
@@ -29,10 +40,16 @@ const sortByDeFiValue = async (page: puppeteer.Page, times: number) => {
 };
 
 /**
+ *
+ * @param page
+ */
+/**
  * Get the names of coins
  * @param page The web page to be opened
+ * @returns The array stored coin names
  */
 const getDeFiNames = async (page: puppeteer.Page) => {
+  let nameResults: string[] = [];
   const names = await page.$x(
     `//div[@id="tabContainer"]/div[2]/div[2]/div/div[2]/div/div/a/div[2]`
   );
@@ -42,6 +59,7 @@ const getDeFiNames = async (page: puppeteer.Page) => {
       nameResults.push(name);
     }
   }
+  return nameResults;
 };
 
 /**
@@ -49,6 +67,7 @@ const getDeFiNames = async (page: puppeteer.Page) => {
  * @param page The web page to be opened
  */
 const getDeFiValues = async (page: puppeteer.Page) => {
+  let valueResults: string[] = [];
   const values = await page.$x(
     `//div[@id="tabContainer"]/div[2]/div[2]/div/div[2]/div/div/div[1]/div`
   );
@@ -60,6 +79,7 @@ const getDeFiValues = async (page: puppeteer.Page) => {
       valueResults.push(value);
     }
   }
+  return valueResults;
 };
 
 /**
@@ -89,19 +109,10 @@ const demoValues = (
 const main_actual = async () => {
   try {
     console.log("Your program is running to scrap the webpage:", url);
-    const browser: puppeteer.Browser = await puppeteer.launch({
-      headless: false,
-    });
-    const page: puppeteer.Page = await browser.newPage();
-    await page.setViewport({
-      width: 1280,
-      height: 800,
-      deviceScaleFactor: 1,
-    });
-    await page.goto(url, { waitUntil: "networkidle2" });
+    const page = await gotoPage(url);
     await sortByDeFiValue(page, 2);
-    await getDeFiNames(page);
-    await getDeFiValues(page);
+    const nameResults = await getDeFiNames(page);
+    const valueResults = await getDeFiValues(page);
     demoValues(nameResults, valueResults, 5);
   } catch (e) {
     console.log(e);
