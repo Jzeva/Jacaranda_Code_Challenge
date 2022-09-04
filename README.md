@@ -47,6 +47,16 @@ URL="https://www.binance.com/en-AU/markets/coinInfo-defi"
 ```
 Then save it.
 
+<b>OR</b>
+
+If you don't want to create <i><b>.env</b></i> file at the root directory, you can input:
+```bash
+ export URL="https://www.binance.com/en-AU/markets/coinInfo-defi"
+```
+in your terminal to add the environment variable.
+
+<i><b>Note</b></i>:<i>if you use this way to add the environment variable, you need to input the command before every time you open a new terminal</i>
+
 ### 6. Run the CLI script
 
 ```bash
