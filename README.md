@@ -31,7 +31,7 @@ If the CLI script were to be run today and given the following results seen on B
 [Visual Studio Code](https://www.figma.com/file/EMfRYJpL3DN3Dalde3iAYh/basketball-canva-hifi?node-id=1%3A2392)
 
 ### 3. Specify the Version of npm and Nodejs
-<b>• Node:  </b>v16.14.0
+<b>• Node:  </b>v16.14.0<br>
 <b>• NPM:  </b>8.3.1
 
 <i><b>Note</b></i>:<i>if you don't have the correct version of Node, you can try this ["n" Node.js version management tool](https://github.com/tj/n) to manage your Node version.</i>
