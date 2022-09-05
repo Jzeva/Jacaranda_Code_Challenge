@@ -30,17 +30,23 @@ If the CLI script were to be run today and given the following results seen on B
 ### 2. Recommended Code Editor
 [Visual Studio Code](https://www.figma.com/file/EMfRYJpL3DN3Dalde3iAYh/basketball-canva-hifi?node-id=1%3A2392)
 
-### 3. Download the Source Code
+### 3. Specify the Version of npm and Nodejs
+<b>• Node:  </b>v16.14.0
+<b>• NPM:  </b>8.3.1
+
+<i><b>Note</b></i>:<i>if you don't have the correct version of Node, you can try this ["n" Node.js version management tool](https://github.com/tj/n) to manage your Node version.</i>
+
+### 4. Download the Source Code
 [From my GitHub Repo](https://github.com/Jzeva/Jacaranda_Code_Challenge)
 
-### 4. Install Dependencies
+### 5. Install Dependencies
 
 ```bash
 $ npm i
 ```
 <i><b>It will take a while to install all the dependencies needed to run the program</i>:hourglass:. <i>Thanks for your patience!</b></i>
 
-### 5. Setup Environment Variables
+### 6. Setup Environment Variables
 Create a file named <i><b>.env</b></i> at the root directory, and copy the following code in it:
 ```bash
 URL="https://www.binance.com/en-AU/markets/coinInfo-defi"
@@ -57,12 +63,12 @@ in your terminal to add the environment variable.
 
 <i><b>Note</b></i>:<i>if you use this way to add the environment variable, you need to input the command before every time you open a new terminal</i>
 
-### 6. Run the CLI script
+### 7. Run the CLI script
 
 ```bash
 $ ./start.sh
 ```
-### 7. Check the result
+### 8. Check the result
 
 If everything is going right, you will find the target web page has been opened in the Chromium.
 
@@ -81,7 +87,7 @@ TOP 5 DEFI PRICES
 ```
 :dart:That would be the result after you execute the script.
 
-### 8. Run Test
+### 9. Run Test
 
 ```bash
 $ npm test

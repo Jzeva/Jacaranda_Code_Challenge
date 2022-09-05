@@ -5,6 +5,11 @@ dotenv.config();
 
 const url: string = process.env.URL || ""; //The URL of the webpage to do web scrapping
 
+/**
+ * Get the target page
+ * @param targetUrl The target web page url
+ * @returns The page The web page to be accessed
+ */
 const gotoPage = async (targetUrl: string) => {
   const browser: puppeteer.Browser = await puppeteer.launch({
     headless: false,
@@ -21,7 +26,7 @@ const gotoPage = async (targetUrl: string) => {
 
 /**
  *Sort the results in descending order
- * @param page The web page to be opened
+ * @param page The web page to be accessed
  * @param times The times click the sort button
  */
 const sortByDeFiValue = async (page: puppeteer.Page, times: number) => {
@@ -39,10 +44,6 @@ const sortByDeFiValue = async (page: puppeteer.Page, times: number) => {
   }
 };
 
-/**
- *
- * @param page
- */
 /**
  * Get the names of coins
  * @param page The web page to be opened
@@ -64,7 +65,8 @@ const getDeFiNames = async (page: puppeteer.Page) => {
 
 /**
  * Get the values of coins
- * @param page The web page to be opened
+ * @param page
+ * @returns The array stored coin values
  */
 const getDeFiValues = async (page: puppeteer.Page) => {
   let valueResults: string[] = [];
