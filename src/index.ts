@@ -10,7 +10,7 @@ const url: string = process.env.URL || ""; //The URL of the webpage to do web sc
  * @param targetUrl The target web page url
  * @returns The page The web page to be accessed
  */
-const gotoPage = async (targetUrl: string) => {
+const gotoPage = async (targetUrl: string): Promise<puppeteer.Page> => {
   const browser: puppeteer.Browser = await puppeteer.launch({
     headless: false,
   });
@@ -49,7 +49,7 @@ const sortByDeFiValue = async (page: puppeteer.Page, times: number) => {
  * @param page The web page to be opened
  * @returns The array stored coin names
  */
-const getDeFiNames = async (page: puppeteer.Page) => {
+const getDeFiNames = async (page: puppeteer.Page): Promise<string[]> => {
   let nameResults: string[] = [];
   const names = await page.$x(
     `//div[@id="tabContainer"]/div[2]/div[2]/div/div[2]/div/div/a/div[2]`
@@ -68,7 +68,7 @@ const getDeFiNames = async (page: puppeteer.Page) => {
  * @param page
  * @returns The array stored coin values
  */
-const getDeFiValues = async (page: puppeteer.Page) => {
+const getDeFiValues = async (page: puppeteer.Page): Promise<string[]> => {
   let valueResults: string[] = [];
   const values = await page.$x(
     `//div[@id="tabContainer"]/div[2]/div[2]/div/div[2]/div/div/div[1]/div`
